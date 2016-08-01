@@ -36,8 +36,8 @@ var herokuURL = process.env.HEROKU_URL
 if (herokuURL) {
   var request = require('request')
   require('http').createServer(function (req, res) {
-    res.end('ping heroku\n')
-  }).listen(process.env.PORT)
+    res.end('ping openshift\n')
+  }).listen(process.env.OPENSHIFT_NODEJS_PORT)
   setInterval(function () {
     request(herokuURL).pipe(process.stdout)
   }, 5 * 60 * 1000)
