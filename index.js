@@ -10,6 +10,7 @@ function escapeName (name) {
 }
 
 module.exports = function (opts) {
+  console.log('pre gitter client')
   var gitter = gitterClient(opts.gitterApiKey)
   var headers = {
     'Accept': 'application/json',
@@ -22,6 +23,7 @@ module.exports = function (opts) {
     retryCount: 20
   }, opts.ircOpts)
 
+ console.log('pre irc.client')
   var ircClient = new irc.Client(
     opts.ircServer || 'irc.freenode.net',
     opts.ircNick,
