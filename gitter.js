@@ -4,7 +4,7 @@ module.exports = getClient
 
 function getClient (token) {
   // Authentication extension
-  console.log('getting client');
+  console.log('getting client')
   var ClientAuthExt = function () {}
 
   ClientAuthExt.prototype.outgoing = function (message, callback) {
@@ -17,7 +17,7 @@ function getClient (token) {
   }
 
   // faye client
-  console.log('setting up faye client');
+  console.log('setting up faye client')
   var client = new faye.Client('https://ws.gitter.im/faye', {timeout: 60, retry: 5, interval: 1})
 
   // Add Client Authentication extension
