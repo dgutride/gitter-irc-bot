@@ -32,8 +32,10 @@ if (!((opts.ircChannel || opts.ircOpts.channels) &&
   process.exit(1)
 }
 
+console.log('before heroku')
 var herokuURL = process.env.HEROKU_URL
 if (herokuURL) {
+  console.log('inside heroku: ' + herokuURL)
   var request = require('request')
   require('http').createServer(function (req, res) {
     res.end('ping openshift\n')
